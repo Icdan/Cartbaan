@@ -18,8 +18,8 @@ if (isset($_POST['login'])) {
             //Get our pulled data for the user and put it in session variables so we can use it later on in the session
             //Redirect user to the home page
             $row = mysqli_fetch_assoc($loginQuery);
-            $_SESSION['firstname'] = $row['voornaam'];
-            $_SESSION['lastname'] = $row['achternaam'];
+            $_SESSION['voornaam'] = $row['voornaam'];
+            $_SESSION['achternaam'] = $row['achternaam'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['klant'] = true;

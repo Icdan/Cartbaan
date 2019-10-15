@@ -26,7 +26,13 @@ include "includes/navbar.php";
     <div class="row">
         <div class="col text-center">
             <?php
-                echo "<p class='text-center'>Hallo " . $_SESSION['firstname'];
+            //If there's a client that's logged in, greet them by name
+            //Otherwise welcome the unknown visitor
+            if(isset($_SESSION['klant'])) {
+                echo "<p>Goededag " . $_SESSION['voornaam'] . "</p>";
+            } else {
+                echo "<p>Welkom bezoeker</p>";
+            }
             ?>
         </div>
     </div>
