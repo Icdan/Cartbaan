@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
             $_SESSION['voornaam'] = $row['voornaam'];
             $_SESSION['achternaam'] = $row['achternaam'];
             $_SESSION['email'] = $row['email'];
-            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['idcursist'] = $row['idcursist'];
             $_SESSION['klant'] = true;
             header("Location: index.php");
         } elseif ($_POST) {
