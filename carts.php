@@ -16,7 +16,7 @@ include "db/db_connection.php";
     <?php
     include "includes/header.php";
     ?>
-    <title>Homepage</title>
+    <title>Carts</title>
 </head>
 <body>
 <?php
@@ -33,8 +33,9 @@ include "includes/navbar.php";
                     <th>Status</th>
                 </tr>
                 <?php
+                //Select all carts
                 $getCarts = mysqli_query($conn, "SELECT * FROM `cart`");
-
+                //If we're able to get any carts, check how many there are and loop through the results, creating a table row with data for each of them
                 if ($getCarts) {
                     $amountOfCarts = mysqli_num_rows($getCarts);
                     for ($count = 1; $count <= $amountOfCarts; $count++) {

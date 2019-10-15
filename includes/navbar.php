@@ -7,11 +7,34 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="index.php">Home</a>
-            </li><li class="nav-item">
-                <a class="nav-link" href="cursussen.php">Cursussen</a>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cursussen
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="cursussen-overzicht.php">Overzicht</a>
+                    <a class="dropdown-item" href="cursussen.php">Toevoegen</a>
+                </div>
+            </li>
+            <?php
+            if(isset($_SESSION['klant'])) {
+                echo "
+            <li class='nav-item dropdown'>
+                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                    Uitvoeringen
+                </a>
+                <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                    <a class='dropdown-item' href='uitvoeringen-overzicht.php'>Overzicht</a>
+                    <a class='dropdown-item' href='uitvoeringen.php'>Toevoegen</a>
+                </div>
+            </li>";
+            }
+            ?>
+            <li class="nav-item">
                 <a class="nav-link" href="carts.php">Carts</a>
             </li>
+            <li class="nav-item">
                 <a class="nav-link" href="contact.php">Contact</a>
             </li>
         </ul>
