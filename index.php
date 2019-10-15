@@ -4,9 +4,6 @@ session_start();
 //Connect to database
 include "db/db_connection.php";
 //If user isn't logged in they'll be redirected to the log-in page.
-if (!$_SESSION['loggedin']) {
-    header("Location: login.php");
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,7 +26,7 @@ include "includes/navbar.php";
     <div class="row">
         <div class="col text-center">
             <?php
-                echo "<p class='text-center'>Hello " . $_SESSION['name'];
+                echo "<p class='text-center'>Hallo " . $_SESSION['firstname'];
             ?>
         </div>
     </div>
