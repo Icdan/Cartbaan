@@ -57,10 +57,7 @@ include "includes/navbar.php";
                     $begindatum = $_POST['dateStart'];
                     $einddatum = $_POST['dateEnd'];
                     $iddocent = $_SESSION['idcursist'];
-                    mysqli_query($conn, "INSERT INTO uitvoering('idcursus', 'begindatum', 'einddatum', 'iddocent') VALUES('$idcursus', '$begindatum', '$einddatum', '$iddocent')");
-                    echo "<pre>";
-                    var_dump($_POST);
-                    echo "</pre>";
+                    mysqli_query($conn, "INSERT INTO uitvoering('begindatum', 'einddatum', 'iddocent') VALUES('$begindatum', '$einddatum', '$iddocent')");
                 }
 
                 ?>
