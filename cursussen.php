@@ -37,7 +37,7 @@ include "includes/navbar.php";
                     $amountOfRows = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM cursus"));
                     $newID = $amountOfRows;
                     $omschrijving = $_POST['omschrijving'];
-                    $insertCursus = mysqli_query($conn, "INSERT INTO cursus (`idcursus`, `omschrijving`) VALUES('$newID', '$omschrijving')");
+                    $insertCursus = mysqli_query($conn, "INSERT INTO cursus (`omschrijving`) VALUES('$omschrijving')");
                 }
                 ?>
             </form>

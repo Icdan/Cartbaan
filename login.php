@@ -23,6 +23,7 @@ if (isset($_POST['login'])) {
             $_SESSION['email'] = $row['email'];
             $_SESSION['idcursist'] = $row['idcursist'];
             $_SESSION['klant'] = true;
+            $_SESSION['loggedin'] = true;
             header("Location: index.php");
         } elseif ($_POST) {
             //Email or password is wrongly entered

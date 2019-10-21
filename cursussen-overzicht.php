@@ -32,13 +32,13 @@ include "includes/navbar.php";
                 </tr>
                 <?php
                 //Select and show all courses
-                $getCarts = mysqli_query($conn, "SELECT * FROM `cursus`");
+                $getCursus = mysqli_query($conn, "SELECT * FROM `cursus`");
                 //If we're able to get any courses, check how many there are and loop through the results, creating a table row with data for each of them
                 //Also adds a button to delete a course
-                if ($getCarts) {
-                    $amountOfCarts = mysqli_num_rows($getCarts);
-                    for ($count = 1; $count <= $amountOfCarts; $count++) {
-                        $row = mysqli_fetch_assoc($getCarts);
+                if ($getCursus) {
+                    $amountOfCursussen = mysqli_num_rows($getCursus);
+                    for ($count = 1; $count <= $amountOfCursussen; $count++) {
+                        $row = mysqli_fetch_assoc($getCursus);
                         echo "<tr><td>" . $row['omschrijving'] ."</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='idcursus' value='" . $row['idcursus'] . "'></form></td></tr>";
                     }
                 }
