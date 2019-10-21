@@ -54,13 +54,11 @@ include "includes/navbar.php";
                 if (isset($_POST['verwijder'])) {
                     $id = $_POST['iduitvoering'];
                     mysqli_query($conn, "DELETE FROM uitvoering WHERE `iduitvoering` = '$id'");
-//                    header("Location: uitvoeringen-overzicht.php");
                 }
                 if (isset($_POST['bestel'])) {
                     $id = $_POST['iduitvoering'];
                     $cursist = $_SESSION['idcursist'];
                     mysqli_query($conn, "INSERT INTO `uitvoering_has_cursist`(`iduitvoering`, `idcursist`) VALUES ('$id', '$cursist')");
-//                    header("Location: uitvoeringen-overzicht.php");
                 }
                 ?>
             </table>
