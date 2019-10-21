@@ -31,25 +31,36 @@ include "includes/navbar.php";
             <table>
                 <tr>
                     <th>Omschrijving</th>
+                    <th>Begindatum</th>
+                    <th>Einddatum</th>
                     <th>Wijzigen</th>
+                    <th>Bestellen</th>
                 </tr>
                 <?php
                 //Select and show all courses
-                $getUitvoeringen = mysqli_query($conn, "SELECT * FROM `uitvoering` INNER JOIN `cursus` ON uitvoering.idcursus  = cursus.idcursus");
+                $getUitvoeringen = mysqli_query($conn, "SELECT * FROM `uitvoering` INNER JOIN `cursus` ON uitvoering.idcursus  = cursus.idcursus ORDER BY uitvoering.begindatum ASC");
                 //If we're able to get any courses, check how many there are and loop through the results, creating a table row with data for each of them
                 //Also adds a button to delete a course
                 if ($getUitvoeringen) {
                     $amountOfExec = mysqli_num_rows($getUitvoeringen);
                     for ($count = 1; $count <= $amountOfExec; $count++) {
                         $row = mysqli_fetch_assoc($getUitvoeringen);
-                        echo "<tr><td>" . $row['omschrijving'] ."</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></form></td></tr>";
+                        echo "<tr><td>" . $row['omschrijving'] . "</td><td>" . $row['begindatum'] . "</td><td>" . $row['einddatum'] . "</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></form></td>
+<td><form method='post'><input type='submit' name='bestel' value ='Bestel'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></form></td>
+</tr>";
                     }
                 }
                 //If something is selected to be deleted, it will look at the id of the item being deleted and force a refresh of the page in order to make sure the course overview is updated
                 if (isset($_POST['verwijder'])) {
                     $id = $_POST['iduitvoering'];
                     mysqli_query($conn, "DELETE FROM uitvoering WHERE `iduitvoering` = '$id'");
-                    header("Location: uitvoeringen-overzicht.php");
+//                    header("Location: uitvoeringen-overzicht.php");
+                }
+                if (isset($_POST['bestel'])) {
+                    $id = $_POST['iduitvoering'];
+                    $cursist = $_SESSION['idcursist'];
+                    mysqli_query($conn, "INSERT INTO `uitvoering_has_cursist`(`iduitvoering`, `idcursist`) VALUES ('$id', '$cursist')");
+//                    header("Location: uitvoeringen-overzicht.php");
                 }
                 ?>
             </table>
