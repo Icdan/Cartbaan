@@ -23,6 +23,9 @@ if (isset($_POST['login'])) {
             $_SESSION['voornaam'] = $row['voornaam'];
             $_SESSION['achternaam'] = $row['achternaam'];
             $_SESSION['email'] = $row['email'];
+            $_SESSION['adres'] = $row['adres'];
+            $_SESSION['postcode'] = $row['postcode'];
+            $_SESSION['woonplaats'] = $row['woonplaats'];
             $_SESSION['idcursist'] = $row['idcursist'];
             $_SESSION['klant'] = true;
             $_SESSION['loggedin'] = true;

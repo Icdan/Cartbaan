@@ -33,6 +33,7 @@ include "includes/navbar.php";
                     <th>Omschrijving</th>
                     <th>Begindatum</th>
                     <th>Einddatum</th>
+                    <th>Prijs</th>
                     <th>Wijzigen</th>
                     <th>Bestellen</th>
                 </tr>
@@ -45,7 +46,7 @@ include "includes/navbar.php";
                     $amountOfExec = mysqli_num_rows($getUitvoeringen);
                     for ($count = 1; $count <= $amountOfExec; $count++) {
                         $row = mysqli_fetch_assoc($getUitvoeringen);
-                        echo "<tr><td>" . $row['omschrijving'] . "</td><td>" . $row['begindatum'] . "</td><td>" . $row['einddatum'] . "</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></td>
+                        echo "<tr><td>" . $row['omschrijving'] . "</td><td>" . $row['begindatum'] . "</td><td>" . $row['einddatum'] . "</td><td>€" . $row['prijs'] . "</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></td>
 <td><input type='submit' name='bestel' value ='Bestel'></form></td><td>" . $row['iduitvoering'] . "</td>
 </tr>";
                     }
