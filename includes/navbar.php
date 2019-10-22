@@ -28,6 +28,9 @@
                     <a class='dropdown-item' href='uitvoeringen-overzicht.php'>Overzicht</a>
                     <a class='dropdown-item' href='uitvoeringen.php'>Toevoegen</a>
                 </div>
+            </li>
+            <li class='nav-item'>
+                <a class='nav-link' href='winkelwagen.php'>Winkelwagen</a>
             </li>";
             }
             ?>

@@ -45,8 +45,8 @@ include "includes/navbar.php";
                     $amountOfExec = mysqli_num_rows($getUitvoeringen);
                     for ($count = 1; $count <= $amountOfExec; $count++) {
                         $row = mysqli_fetch_assoc($getUitvoeringen);
-                        echo "<tr><td>" . $row['omschrijving'] . "</td><td>" . $row['begindatum'] . "</td><td>" . $row['einddatum'] . "</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></form></td>
-<td><form method='post'><input type='submit' name='bestel' value ='Bestel'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></form></td>
+                        echo "<tr><td>" . $row['omschrijving'] . "</td><td>" . $row['begindatum'] . "</td><td>" . $row['einddatum'] . "</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='iduitvoering' value='" . $row['iduitvoering'] . "'></td>
+<td><input type='submit' name='bestel' value ='Bestel'></form></td><td>" . $row['iduitvoering'] . "</td>
 </tr>";
                     }
                 }
@@ -54,11 +54,12 @@ include "includes/navbar.php";
                 if (isset($_POST['verwijder'])) {
                     $id = $_POST['iduitvoering'];
                     mysqli_query($conn, "DELETE FROM uitvoering WHERE `iduitvoering` = '$id'");
-                }
-                if (isset($_POST['bestel'])) {
+                    header("Location: ");
+                } elseif (isset($_POST['bestel'])) {
                     $id = $_POST['iduitvoering'];
-                    $cursist = $_SESSION['idcursist'];
-                    mysqli_query($conn, "INSERT INTO `uitvoering_has_cursist`(`iduitvoering`, `idcursist`) VALUES ('$id', '$cursist')");
+                    array_push($_SESSION['winkelwagen'], $id);
+//                    $cursist = $_SESSION['idcursist'];
+//                    mysqli_query($conn, "INSERT INTO `uitvoering_has_cursist`(`iduitvoering`, `idcursist`) VALUES ('$id', '$cursist')");
                 }
                 ?>
             </table>
