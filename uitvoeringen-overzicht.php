@@ -38,7 +38,7 @@ include "includes/navbar.php";
                 </tr>
                 <?php
                 //Select and show all courses
-                $getUitvoeringen = mysqli_query($conn, "SELECT * FROM `uitvoering` INNER JOIN `cursus` ON uitvoering.idcursus  = cursus.idcursus ORDER BY uitvoering.begindatum ASC");
+                $getUitvoeringen = mysqli_query($conn, "SELECT * FROM `uitvoering` INNER JOIN `cursus` ON uitvoering.idcursus = cursus.idcursus ORDER BY cursus.omschrijving ASC, uitvoering.begindatum ASC");
                 //If we're able to get any courses, check how many there are and loop through the results, creating a table row with data for each of them
                 //Also adds a button to delete a course
                 if ($getUitvoeringen) {
