@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b0148234-2347-4b6b-a845-47a2f2619c14" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db/db_connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/factuur.php" beforeDir="false" afterPath="$PROJECT_DIR$/factuur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uitvoeringen-overzicht.php" beforeDir="false" afterPath="$PROJECT_DIR$/uitvoeringen-overzicht.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/winkelwagen.php" beforeDir="false" afterPath="$PROJECT_DIR$/winkelwagen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uitvoeringen.php" beforeDir="false" afterPath="$PROJECT_DIR$/uitvoeringen.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +25,9 @@
   <component name="ProjectId" id="1SEK4FlJPko8Acy2n58TUXNd2zW" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Google Drive/Programming/invoice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,7 +53,13 @@
       <updated>1571048987580</updated>
       <workItem from="1571048989788" duration="161000" />
       <workItem from="1571123123291" duration="24667000" />
-      <workItem from="1571649941078" duration="30620000" />
+      <workItem from="1571649941078" duration="30910000" />
+      <workItem from="1571923266797" duration="1216000" />
+      <workItem from="1572012184198" duration="598000" />
+      <workItem from="1572250706482" duration="6080000" />
+      <workItem from="1572341735857" duration="633000" />
+      <workItem from="1572351089850" duration="1382000" />
+      <workItem from="1573458983101" duration="4586000" />
     </task>
     <servers />
   </component>

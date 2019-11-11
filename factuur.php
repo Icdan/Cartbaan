@@ -43,17 +43,17 @@ include "includes/navbar.php";
                 </tr>";
             $winkelwagen = array_unique($_SESSION['winkelwagen']);
             $subTotal = 0;
-            foreach ($winkelwagen as $key => $value) {
-                $uitvoeringNaamQuery = mysqli_query($conn, "SELECT * FROM `uitvoering` INNER JOIN `cursus` ON uitvoering.idcursus  = cursus.idcursus WHERE `iduitvoering` = '$value' ORDER BY uitvoering.begindatum ASC ");
-                $row = mysqli_fetch_assoc($uitvoeringNaamQuery);
-                echo "<tr>";
-                echo "<td>" . $row['omschrijving'] . "</td><td>" . $row['begindatum'] . "</td><td>" . $row['einddatum'] . "</td><td>€" . $row['prijs'] . "</td>";
-                echo "</tr>";
-                $subTotal = $subTotal + $row['prijs'];
-            }
-            echo "<tr><td></td><td></td><td></td><td>€" . $subTotal . "</td></tr>";
-            echo "<tr><td></td><td></td><td></td><td>€" . ($subTotal * 0.21) . "</td></tr>";
-            echo "<tr><td></td><td></td><td></td><td>€" . ($subTotal * 1.21) . "</td></tr>";
+//            foreach ($winkelwagen as $key => $value) {
+//                $uitvoeringNaamQuery = mysqli_query($conn, "SELECT * FROM `uitvoering` INNER JOIN `cursus` ON uitvoering.idcursus  = cursus.idcursus WHERE `iduitvoering` = '$value' ORDER BY uitvoering.begindatum ASC ");
+//                $row = mysqli_fetch_assoc($uitvoeringNaamQuery);
+//                echo "<tr>";
+//                echo "<td>" . $row['omschrijving'] . "</td><td>" . $row['begindatum'] . "</td><td>" . $row['einddatum'] . "</td><td>€" . $row['prijs'] . "</td>";
+//                echo "</tr>";
+//                $subTotal = $subTotal + $row['prijs'];
+//            }
+            echo "<tr><td></td><td></td><td>Totaal (ex btw)</td><td>€" . $subTotal . "</td></tr>";
+            echo "<tr><td></td><td></td><td>BTW (21%)</td><td>€" . ($subTotal * 0.21) . "</td></tr>";
+            echo "<tr><td></td><td></td><td>Totaal (incl btw)</td><td>€" . ($subTotal * 1.21) . "</td></tr>";
             echo "</table>";
             ?>
         </div>

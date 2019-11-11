@@ -39,7 +39,7 @@ include "includes/navbar.php";
                     $amountOfCursussen = mysqli_num_rows($getCursus);
                     for ($count = 1; $count <= $amountOfCursussen; $count++) {
                         $row = mysqli_fetch_assoc($getCursus);
-                        echo "<tr><td>" . $row['omschrijving'] ."</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='idcursus' value='" . $row['idcursus'] . "'></form></td></tr>";
+                        echo "<tr><td>" . $row['omschrijving'] ."</td><td>€" . $row['prijs'] ."</td><td>" . "<form method='post'><input type='submit' name='verwijder' value ='Verwijder'><input type='hidden' name='idcursus' value='" . $row['idcursus'] . "'></form></td></tr>";
                     }
                 }
                 //If something is selected to be deleted, it will look at the id of the item being deleted and force a refresh of the page in order to make sure the course overview is updated

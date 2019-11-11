@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $password = "";
-$db = "cartbaan";
+$db = "cartbaan2";
 
 $conn = mysqli_connect($server, $user, $password, $db);
 

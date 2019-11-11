@@ -58,6 +58,7 @@ include "includes/navbar.php";
                     $einddatum = $_POST['dateEnd'];
                     // change idcursist to iddocent if we would want one of the actual teachers to add the execution of the course
                     // While testing, make the idnumber for the docent exists in the docent table
+                    // WARNING UNDER THIS READ IF IT DOESN'T WORK
                     // BREAKS COMPLETLEY if the guy who adds this has no id that isn't also in the docent table
                     $iddocent = $_SESSION['idcursist'];
                     mysqli_query($conn, "INSERT INTO `uitvoering`(`idcursus`, `begindatum`, `einddatum`, `iddocent`) VALUES('$idcursus', '$begindatum', '$einddatum', '$iddocent')");

@@ -29,6 +29,7 @@ include "includes/navbar.php";
                 <label>Cursus</label>
                 <br>
                 <input type="text" required name="omschrijving" placeholder="Omschrijving" maxlength="45">
+                <input type="text" required name="prijs" placeholder="Prijs" maxlength="45">
                 <br><br>
                 <input type="submit" value="Toevoegen" name="toevoegen">
                 <?php
@@ -37,7 +38,8 @@ include "includes/navbar.php";
                     $amountOfRows = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM cursus"));
                     $newID = $amountOfRows;
                     $omschrijving = $_POST['omschrijving'];
-                    $insertCursus = mysqli_query($conn, "INSERT INTO cursus (`omschrijving`) VALUES('$omschrijving')");
+                    $prijs = $_POST['prijs'];
+                    $insertCursus = mysqli_query($conn, "INSERT INTO cursus (`omschrijving`, `prijs`) VALUES('$omschrijving', '$prijs')");
                 }
                 ?>
             </form>

@@ -39,7 +39,6 @@ if (isset($_POST['login'])) {
         echo "Something went wrong, contact the site administrator";
     }
 }
-
 ?>
 <!doctype html>
 <html lang="en">
